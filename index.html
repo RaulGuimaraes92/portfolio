@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de Raul Coutinho Guimarães — Desenvolvedor Full Stack Jr, Analista de Sistemas, Power Platform, automação e LGPD." />
+  <meta name="theme-color" content="#07111f" />
+  <title>Raul Coutinho Guimarães | Portfólio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+    :root{
+      --bg:#06101d;
+      --bg-2:#081625;
+      --card:#0b1929;
+      --card-2:#0d1d2f;
+      --line:#17324a;
+      --line-soft:rgba(89,162,255,.16);
+      --text:#f4f7fb;
+      --muted:#a8b5c6;
+      --blue:#2788ff;
+      --blue-2:#63b0ff;
+      --cyan:#25d4d0;
+      --green:#2fe889;
+      --purple:#9a73ff;
+      --yellow:#e3b84f;
+      --shadow:0 18px 60px rgba(0,0,0,.28);
+      --radius:18px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:86px}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 80% 7%, rgba(39,136,255,.10), transparent 27%),
+        radial-gradient(circle at 15% 30%, rgba(37,212,208,.05), transparent 25%),
+        linear-gradient(180deg,#05101c 0%,#06111e 38%,#050e19 100%);
+      font-family:"Inter",sans-serif;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.22;
+      background-image:
+        linear-gradient(rgba(69,130,190,.055) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(69,130,190,.055) 1px,transparent 1px);
+      background-size:42px 42px;
+      mask-image:linear-gradient(to bottom,black,transparent 84%);
+      z-index:-1;
+    }
+
+    a{color:inherit;text-decoration:none}
+    button,a{ -webkit-tap-highlight-color:transparent }
+    .container{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+    .mono{font-family:"JetBrains Mono",monospace}
+    .accent{color:var(--blue-2)}
+    .green{color:var(--green)}
+    .muted{color:var(--muted)}
+    .section{padding:92px 0;border-top:1px solid rgba(90,150,210,.12)}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:flex-end;margin-bottom:34px}
+    .section-number{
+      font:600 12px/1 "JetBrains Mono",monospace;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      color:var(--blue-2);
+      margin-bottom:12px;
+    }
+    .section-number::before{content:"●";color:var(--green);margin-right:10px}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(42px,6vw,76px);line-height:1.03;letter-spacing:-.05em;margin-bottom:14px}
+    h2{font-size:clamp(30px,4vw,48px);line-height:1.06;letter-spacing:-.04em;margin-bottom:0}
+    h3{font-size:18px;margin-bottom:10px}
+    p{color:var(--muted)}
+
+    /* NAV */
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(16px);
+      background:rgba(5,14,25,.78);
+      border-bottom:1px solid rgba(83,153,220,.14);
+    }
+    .nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;white-space:nowrap}
+    .brand-mark{
+      font:800 22px/1 "Inter",sans-serif;
+      color:var(--blue-2);
+      letter-spacing:-.07em;
+      border:1px solid rgba(74,151,255,.35);
+      padding:7px 8px;
+      border-radius:9px;
+      box-shadow:inset 0 0 20px rgba(39,136,255,.08);
+    }
+    .nav-links{display:flex;align-items:center;gap:25px;font-size:13px}
+    .nav-links a{color:#c8d3df;transition:.2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--blue-2)}
+    .nav-links a span{font-family:"JetBrains Mono";color:var(--blue);margin-right:5px}
+    .menu-btn{display:none;background:none;border:0;color:white;font-size:25px;cursor:pointer}
+
+    /* HERO */
+    .hero{padding:72px 0 90px;min-height:calc(100vh - 74px);display:flex;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}
+    .hello{font:500 14px "JetBrains Mono";color:var(--green);margin-bottom:20px}
+    .hero-sub{font-size:20px;color:#e4ebf3;font-weight:600;margin-bottom:16px}
+    .hero-copy{font-size:16px;max-width:630px}
+    .cursor{display:inline-block;width:16px;height:4px;background:var(--blue-2);margin-left:8px;animation:blink 1s step-end infinite}
+    @keyframes blink{50%{opacity:0}}
+    .actions{display:flex;flex-wrap:wrap;gap:13px;margin:31px 0 25px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:48px;padding:0 20px;border-radius:11px;
+      border:1px solid rgba(96,160,230,.45);
+      font-weight:700;font-size:14px;transition:.2s;cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-2px);border-color:var(--blue-2)}
+    .btn-primary{background:linear-gradient(135deg,#2177ff,#269aff);border-color:transparent;box-shadow:0 9px 28px rgba(39,136,255,.25)}
+    .btn-outline{background:rgba(10,24,40,.45)}
+    .btn-whatsapp{background:#20d76b;color:#04140a;border-color:#20d76b}
+    .socials{display:flex;gap:10px}
+    .social{
+      width:42px;height:42px;border:1px solid var(--line);border-radius:10px;
+      display:grid;place-items:center;color:var(--blue-2);font-weight:700;
+      background:rgba(8,22,37,.7);transition:.2s;
+    }
+    .social:hover{border-color:var(--blue);transform:translateY(-2px)}
+    .social.wa{color:var(--green)}
+
+    .editor{
+      border:1px solid var(--line);
+      background:#071421;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .editor-top{
+      height:44px;display:flex;align-items:center;gap:8px;padding:0 14px;
+      border-bottom:1px solid var(--line);background:#091827;
+      font:500 12px "JetBrains Mono";
+    }
+    .dot{width:9px;height:9px;border-radius:50%}
+    .red{background:#ff605c}.amber{background:#ffbd44}.grn{background:#00ca4e}
+    .tab{margin-left:10px;color:#dce7f3}
+    .code{padding:20px 22px 24px;font:500 13px/1.8 "JetBrains Mono";overflow:auto}
+    .ln{display:inline-block;width:24px;color:#4a6480;user-select:none}
+    .c-green{color:#2ee889}.c-blue{color:#45a3ff}.c-purple{color:#b087ff}.c-orange{color:#ffad66}.c-white{color:#dce6f0}
+    .terminal{
+      border-top:1px solid var(--line);padding:13px 20px 17px;
+      font:500 12px/1.7 "JetBrains Mono";background:#06111d;color:#c7d4df
+    }
+
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:58px;align-items:start}
+    .about-text p{font-size:16px}
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .mini-card,.card{
+      background:linear-gradient(180deg,rgba(12,29,47,.88),rgba(8,23,38,.88));
+      border:1px solid var(--line-soft);border-radius:var(--radius);box-shadow:inset 0 1px rgba(255,255,255,.02);
+    }
+    .mini-card{padding:20px}
+    .mini-icon{font-size:22px;color:var(--blue);margin-bottom:12px}
+    .mini-card p{font-size:13px;margin-bottom:0}
+
+    /* SKILLS */
+    .section-note{max-width:390px;font:500 13px/1.7 "JetBrains Mono";color:#86a3bd}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .skill-card{padding:24px}
+    .skill-title{display:flex;align-items:center;gap:11px;margin-bottom:18px}
+    .skill-icon{font-size:25px;color:var(--blue)}
+    .chips{display:flex;flex-wrap:wrap;gap:9px}
+    .chip{
+      font:500 12px "Inter";padding:7px 10px;border-radius:8px;
+      background:#12263a;border:1px solid rgba(130,180,230,.12);color:#d9e5ef;
+    }
+
+    /* EXPERIENCE */
+    .experience-wrap{display:grid;grid-template-columns:180px 1fr;gap:25px}
+    .date-col{position:relative;padding:20px 0 20px 33px;color:#dce7f0;font:500 14px "JetBrains Mono"}
+    .date-col::before{
+      content:"";position:absolute;left:8px;top:12px;bottom:-30px;width:2px;
+      background:linear-gradient(var(--blue),rgba(39,136,255,.12));
+    }
+    .date-col::after{
+      content:"";position:absolute;left:1px;top:26px;width:16px;height:16px;border-radius:50%;
+      background:var(--blue);box-shadow:0 0 0 5px rgba(39,136,255,.10);
+    }
+    .experience-card{padding:26px}
+    .experience-card h3{font-size:19px;color:var(--blue-2)}
+    .experience-card .role{color:white;font-weight:700;margin-top:-6px}
+    .experience-card p{margin-bottom:16px}
+    .tag-row{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{font-size:11px;font-weight:600;padding:6px 9px;border-radius:7px;background:rgba(104,73,186,.35);border:1px solid rgba(155,115,255,.22);color:#e4d9ff}
+
+    /* PROJECTS */
+    .projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .project-card{padding:27px;position:relative;overflow:hidden}
+    .project-card::after{
+      content:"";position:absolute;width:180px;height:180px;border-radius:50%;
+      background:rgba(39,136,255,.06);filter:blur(2px);right:-85px;top:-90px;
+    }
+    .project-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+    .project-icon{
+      width:44px;height:44px;flex:none;border:1px solid rgba(39,136,255,.4);
+      border-radius:11px;display:grid;place-items:center;color:var(--blue-2);font:700 20px "JetBrains Mono";
+    }
+    .project-card p{font-size:14px}
+    .metric{
+      display:inline-flex;align-items:center;gap:8px;
+      margin:4px 0 19px;padding:9px 12px;border-radius:9px;
+      border:1px solid rgba(47,232,137,.18);background:rgba(47,232,137,.06);
+      color:#b9f7d4;font-size:13px;font-weight:600;
+    }
+
+    /* EDUCATION */
+    .education-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .education-card{padding:26px}
+    .education-card p:last-child{margin-bottom:0}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr auto;gap:34px;align-items:center}
+    .contact-list{display:grid;gap:12px}
+    .contact-item{display:flex;align-items:center;gap:12px;color:#cbd7e4;font-size:14px;word-break:break-word}
+    .contact-item strong{color:var(--blue-2);width:23px;text-align:center}
+
+    footer{
+      padding:26px 0;border-top:1px solid rgba(100,160,220,.14);
+      color:#8ca0b6;font-size:12px;
+    }
+    .footer-grid{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+    .footer-brand{display:flex;align-items:center;gap:12px}
+
+    /* ANIMATIONS */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media (max-width: 900px){
+      .nav-links{
+        position:fixed;top:74px;left:0;right:0;
+        display:none;flex-direction:column;align-items:flex-start;
+        padding:24px 20px;background:#071421;border-bottom:1px solid var(--line);
+      }
+      .nav-links.open{display:flex}
+      .menu-btn{display:block}
+      .hero{min-height:auto}
+      .hero-grid,.about-grid,.skills-grid,.experience-wrap,.projects-grid,.education-grid,.contact-grid{grid-template-columns:1fr}
+      .hero-grid{gap:42px}
+      .experience-wrap{gap:8px}
+      .date-col{padding-bottom:8px}
+      .date-col::before{bottom:-13px}
+      .contact-grid{align-items:start}
+      .section-head{align-items:flex-start;flex-direction:column}
+      .section{padding:72px 0}
+    }
+
+    @media (max-width: 560px){
+      .container{width:min(100% - 28px,var(--max))}
+      .nav{height:66px}
+      html{scroll-padding-top:76px}
+      .hero{padding-top:50px}
+      .mini-grid{grid-template-columns:1fr}
+      .actions .btn{width:100%}
+      .skills-grid{grid-template-columns:1fr}
+      .code{font-size:11px;padding:16px}
+      .brand span:last-child{font-size:13px}
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#inicio" aria-label="Ir para o início">
+      <span class="brand-mark">RCG</span>
+      <span>Raul Coutinho Guimarães</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
+      <a href="#sobre"><span>01.</span>Sobre</a>
+      <a href="#experiencia"><span>02.</span>Experiência</a>
+      <a href="#projetos"><span>03.</span>Projetos</a>
+      <a href="#habilidades"><span>04.</span>Habilidades</a>
+      <a href="#formacao"><span>05.</span>Formação</a>
+      <a href="#contato"><span>06.</span>Contato</a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <div class="hello">// Bem-vindo(a) ao meu portfólio</div>
+        <div class="mono" style="font-size:24px;margin-bottom:3px">Olá, eu sou</div>
+        <h1>Raul Coutinho<br>Guimarães<span class="cursor"></span></h1>
+        <div class="hero-sub mono">Desenvolvedor Full Stack Jr</div>
+        <p class="hero-copy">
+          Desenvolvimento web, automação, análise de dados e soluções digitais.
+          Busco transformar processos e ideias em soluções eficientes, unindo tecnologia,
+          aprendizado contínuo e foco em resultados.
+        </p>
+
+        <div class="socials">
+          <a class="social" href="https://www.linkedin.com/in/raul-guimaraes-107ba0206/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a class="social" href="https://github.com/RaulGuimaraes92" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a class="social wa" href="https://wa.me/5547988672018" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a class="social" href="https://mail.google.com/mail/?view=cm&fs=1&to=guimaraes.raul92%40gmail.com" target="_blank" rel="noopener" aria-label="Enviar e-mail pelo Gmail" title="E-mail">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="editor reveal" aria-label="Exemplo visual de editor de código">
+        <div class="editor-top">
+          <span class="dot red"></span><span class="dot amber"></span><span class="dot grn"></span>
+          <span class="tab">main.py</span>
+        </div>
+        <div class="code">
+          <div><span class="ln">1</span><span class="c-green"># tecnologia + pessoas + resultados</span></div>
+          <div><span class="ln">2</span></div>
+          <div><span class="ln">3</span><span class="c-blue">class</span> <span class="c-purple">Desenvolvedor</span>:</div>
+          <div><span class="ln">4</span>&nbsp;&nbsp;<span class="c-blue">def</span> <span class="c-purple">__init__</span>(self):</div>
+          <div><span class="ln">5</span>&nbsp;&nbsp;&nbsp;&nbsp;self.nome = <span class="c-orange">"Raul Coutinho Guimarães"</span></div>
+          <div><span class="ln">6</span>&nbsp;&nbsp;&nbsp;&nbsp;self.foco = [</div>
+          <div><span class="ln">7</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-orange">"Desenvolvimento"</span>,</div>
+          <div><span class="ln">8</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-orange">"Automação"</span>,</div>
+          <div><span class="ln">9</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-orange">"Dados"</span>,</div>
+          <div><span class="ln">10</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-orange">"Soluções Digitais"</span></div>
+          <div><span class="ln">11</span>&nbsp;&nbsp;&nbsp;&nbsp;]</div>
+          <div><span class="ln">12</span></div>
+          <div><span class="ln">13</span>&nbsp;&nbsp;<span class="c-blue">def</span> <span class="c-purple">trabalhar</span>(self):</div>
+          <div><span class="ln">14</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-blue">return</span> <span class="c-orange">"Ideias em soluções."</span></div>
+        </div>
+        <div class="terminal">
+          <span class="green">▶</span> python main.py<br>
+          <span class="green">Ideias em soluções.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sobre">
+    <div class="container about-grid">
+      <div class="about-text reveal">
+        <div class="section-number">01. Sobre mim</div>
+        <h2>Mais que código,<br>soluções para pessoas.</h2>
+        <br>
+        <p>
+          Sou formado em Engenharia de Software e atuo com desenvolvimento web,
+          automação de processos, análise de dados e criação de soluções digitais.
+        </p>
+        <p>
+          Atualmente sou Analista de Sistemas no Consórcio Solução Infra, atuando na INFRA S.A.
+          com desenvolvimento de soluções em Power Platform, apoio à adequação à LGPD,
+          levantamento e mapeamento de processos e consultoria LGPD.
+        </p>
+        <p>
+          Tenho perfil analítico, foco em resultados e busco aplicar tecnologia para tornar
+          processos mais organizados, eficientes e fáceis de acompanhar.
+        </p>
+      </div>
+
+      <div class="mini-grid reveal">
+        <div class="mini-card">
+          <div class="mini-icon">⌁</div>
+          <h3>Foco em resultados</h3>
+          <p>Uso tecnologia para transformar necessidades em soluções práticas.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">▣</div>
+          <h3>Aprendizado contínuo</h3>
+          <p>Busco evoluir constantemente em desenvolvimento, automação e dados.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">◉</div>
+          <h3>Trabalho em equipe</h3>
+          <p>Atuação colaborativa com áreas técnicas e de negócio.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">ϟ</div>
+          <h3>Proatividade</h3>
+          <p>Identificação de oportunidades de melhoria e construção de soluções.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experiencia">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-number">02. Experiência</div>
+          <h2>Minha trajetória profissional.</h2>
+        </div>
+      </div>
+
+      <div class="experience-wrap reveal">
+        <div class="date-col">Jul 2025 — Atual</div>
+        <article class="card experience-card">
+          <h3>INFRA S.A. — Consórcio Solução Infra</h3>
+          <div class="role">Analista de Sistemas</div>
+          <p>
+            Atuação no desenvolvimento de soluções utilizando Microsoft Power Platform,
+            incluindo Power Apps, Power Automate e Power BI, apoiando a digitalização,
+            organização e acompanhamento de processos e informações.
+          </p>
+          <p>
+            Apoio ao trabalho de adequação à LGPD por meio de levantamento de informações
+            junto às unidades, mapeamento de processos, identificação de tratamentos de dados
+            pessoais e oportunidades de melhoria, estruturação e acompanhamento de planos de ação
+            e apoio à governança das informações.
+          </p>
+          <p>
+            Atuação também como consultor LGPD, apoiando as superintendências no entendimento
+            dos processos, no levantamento de requisitos, na organização das informações e no
+            acompanhamento das ações necessárias ao aprimoramento dos controles de privacidade
+            e proteção de dados.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Power Apps</span>
+            <span class="tag">Power Automate</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">SharePoint</span>
+            <span class="tag">LGPD</span>
+            <span class="tag">Mapeamento de Processos</span>
+            <span class="tag">Levantamento de Requisitos</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projetos">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-number">03. Projetos</div>
+          <h2>Projetos em destaque.</h2>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+        <article class="card project-card reveal">
+          <div class="project-head">
+            <div class="project-icon">&gt;_</div>
+            <div>
+              <h3>BrautoCred <span class="muted" style="font-weight:500">(em desenvolvimento)</span></h3>
+              <p>Plataforma de automação desenvolvida para centralizar e executar fluxos automatizados, integrar serviços e organizar o processamento das informações em uma única solução.</p>
+            </div>
+          </div>
+
+          <div class="metric">⚡ Processo que levava de 30 a 40 minutos passou a ser executado em cerca de 2 minutos.</div>
+
+          <div class="chips">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Python</span>
+            <span class="chip">Flask</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Nginx</span>
+            <span class="chip">Playwright</span>
+            <span class="chip">IA Generativa</span>
+          </div>
+        </article>
+
+        <article class="card project-card reveal">
+          <div class="project-head">
+            <div class="project-icon">▤</div>
+            <div>
+              <h3>Plano de Aprimoramento — LGPD</h3>
+              <p>
+                Trabalho realizado com as superintendências da INFRA S.A. para levantamento
+                e mapeamento dos processos, identificação de oportunidades de melhoria
+                relacionadas à adequação à LGPD e estruturação do acompanhamento das ações.
+              </p>
+              <p>
+                A atuação envolve levantamento de requisitos, organização das informações,
+                definição e acompanhamento de planos de ação e desenvolvimento de soluções
+                em Power Platform para apoiar a gestão e a visualização do andamento das iniciativas.
+              </p>
+            </div>
+          </div>
+
+          <div class="chips">
+            <span class="chip">Metodologias Ágeis</span>
+            <span class="chip">Levantamento de Requisitos</span>
+            <span class="chip">Mapeamento de Processos</span>
+            <span class="chip">Power Apps</span>
+            <span class="chip">Power Automate</span>
+            <span class="chip">Power BI</span>
+            <span class="chip">SharePoint</span>
+            <span class="chip">LGPD</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="habilidades">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-number">04. Habilidades</div>
+          <h2>Tecnologias que utilizo.</h2>
+        </div>
+        <div class="section-note">// Ferramentas para desenvolver, automatizar, analisar e entregar soluções.</div>
+      </div>
+
+      <div class="skills-grid">
+        <article class="card skill-card reveal">
+          <div class="skill-title"><span class="skill-icon">&lt;/&gt;</span><h3>Desenvolvimento Web</h3></div>
+          <div class="chips">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Python</span>
+            <span class="chip">PHP</span>
+            <span class="chip">Flask</span>
+            <span class="chip">SQL</span>
+            <span class="chip">APIs REST</span>
+          </div>
+        </article>
+
+        <article class="card skill-card reveal">
+          <div class="skill-title"><span class="skill-icon">▰</span><h3>Dados e Automação</h3></div>
+          <div class="chips">
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Power BI</span>
+            <span class="chip">Power Apps</span>
+            <span class="chip">Power Automate</span>
+            <span class="chip">Playwright</span>
+            <span class="chip">Análise de Dados</span>
+          </div>
+        </article>
+
+        <article class="card skill-card reveal">
+          <div class="skill-title"><span class="skill-icon">⚙</span><h3>Ferramentas</h3></div>
+          <div class="chips">
+            <span class="chip">Linux</span>
+            <span class="chip">Nginx</span>
+            <span class="chip">Git</span>
+            <span class="chip">GitHub</span>
+            <span class="chip">VS Code</span>
+            <span class="chip">SharePoint</span>
+            <span class="chip">IA Generativa</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="formacao">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-number">05. Formação</div>
+          <h2>Formação e conhecimentos.</h2>
+        </div>
+      </div>
+
+      <div class="education-grid">
+        <article class="card education-card reveal">
+          <h3>🎓 Engenharia de Software</h3>
+          <p class="accent" style="font-weight:700;margin-bottom:5px">2021 — 2025</p>
+          <p>Graduação concluída.</p>
+        </article>
+
+        <article class="card education-card reveal">
+          <h3>◫ Cursos e Certificações</h3>
+          <div class="chips">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Python</span>
+            <span class="chip">Power BI</span>
+            <span class="chip">Excel</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contato">
+    <div class="container contact-grid">
+      <div class="reveal">
+        <div class="section-number">06. Contato</div>
+        <h2>Vamos conversar?</h2>
+        <p>Estou aberto a novas oportunidades, projetos e conexões. Entre em contato.</p>
+      </div>
+
+      <div class="contact-list reveal">
+        <a class="contact-item" href="https://wa.me/5547988672018" target="_blank" rel="noopener">
+          <strong><i class="fa-brands fa-whatsapp"></i></strong> (47) 98867-2018
+        </a>
+        <a class="contact-item" href="https://mail.google.com/mail/?view=cm&fs=1&to=guimaraes.raul92%40ggmail.com" target="_blank" rel="noopener">
+          <strong><i class="fa-solid fa-envelope"></i></strong> guimaraes.raul92@ggmail.com
+        </a>
+        <a class="contact-item" href="https://www.linkedin.com/in/raul-guimaraes-107ba0206/" target="_blank" rel="noopener">
+          <strong><i class="fa-brands fa-linkedin-in"></i></strong> linkedin.com/in/raul-guimaraes-107ba0206/
+        </a>
+        <a class="contact-item" href="https://github.com/RaulGuimaraes92" target="_blank" rel="noopener">
+          <strong><i class="fa-brands fa-github"></i></strong> github.com/RaulGuimaraes92
+        </a>
+        <div class="contact-item">
+          <strong><i class="fa-solid fa-location-dot"></i></strong> Joinville - SC
+        </div>
+      </div>
+
+      <div class="reveal">
+        <a class="btn btn-whatsapp" href="https://wa.me/5547988672018?text=Ol%C3%A1%20Raul%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp →
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">RCG</span>
+      <div><strong style="color:#e8eff6">Raul Coutinho Guimarães</strong><br>Desenvolvimento. Automação. Dados. Resultados.</div>
+    </div>
+    <div>Feito com muito café e código ☕</div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    menuBtn.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.textContent = '☰';
+    });
+  });
+
+  const sections = [...document.querySelectorAll('main section[id]')];
+  const links = [...document.querySelectorAll('.nav-links a')];
+
+  function updateActiveLink() {
+    const offset = window.scrollY + 140;
+    let current = 'inicio';
+
+    sections.forEach(section => {
+      if (offset >= section.offsetTop) current = section.id;
+    });
+
+    links.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  updateActiveLink();
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
